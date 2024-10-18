@@ -16,6 +16,7 @@ export interface UserDocument {
   password: string;
   token: string;
   role: string;
+  active: boolean;
 }
 
 export interface UserFields {
@@ -25,6 +26,7 @@ export interface UserFields {
   token: string;
   role: string;
   displayName?: string;
+  active: boolean;
 }
 
 export interface UserMethods {

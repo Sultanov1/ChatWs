@@ -16,6 +16,7 @@ userRouter.post('/', imagesUpload.single('image'), async (req, res, next) => {
       username: req.body.username,
       password: req.body.password,
       displayName: req.body.displayName,
+      active: true,
     });
 
     user.generateToken();
@@ -43,6 +44,7 @@ userRouter.post('/sessions', async (req, res, next) => {
       return;
     }
 
+    user.active = true;
     user.generateToken();
     await user.save();
 
